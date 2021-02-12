@@ -1,13 +1,12 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const util = require('util');
+// const util = require('util');
 
 // TODO: Create an array of questions for user input
-const writeFileAsync = util.promisify(fs.writeFile);
+// const writeFileAsync = util.promisify(fs.writeFile);
 
-const promptUser = () => {
-  return inquirer.prompt([
+ inquirer.prompt([
     {
       type: 'input',
       name: 'name',
@@ -39,13 +38,15 @@ const promptUser = () => {
       message: 'Enter your LinkedIn URL.',
     },
   ]);
-};
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
 
-// TODO: Create a function to initialize app
-function init() {}
+// const {}
 
-// Function call to initialize app
-init();
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) {}
+
+// // TODO: Create a function to initialize app
+// function init() {}
+
+// // Function call to initialize app
+// init();
