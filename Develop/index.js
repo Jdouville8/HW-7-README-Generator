@@ -9,35 +9,42 @@ const fs = require('fs');
  inquirer.prompt([
     {
       type: 'input',
-      name: 'name',
-      message: 'What is your name?',
+      name: 'Title',
+      message: 'What is the title of your README?',
     },
     {
       type: 'input',
-      name: 'location',
-      message: 'Where are you from?',
+      name: 'Description',
+      message: 'Please provide a short description of your application.',
     },
     {
       type: 'input',
-      name: 'hobby',
-      message: 'What is your favorite hobby?',
+      name: 'Installation',
+      message: 'Provide any relevant installation instructions for your application',
     },
     {
       type: 'input',
-      name: 'food',
-      message: 'What is your favorite food?',
+      name: 'Usage',
+      message: 'What is this application going to be used for?',
     },
     {
       type: 'input',
-      name: 'github',
-      message: 'Enter your GitHub Username',
+      name: 'License',
+      message: 'Which license does this application require',
     },
     {
       type: 'input',
-      name: 'linkedin',
-      message: 'Enter your LinkedIn URL.',
+      name: 'Contribution',
+      message: 'Are there any contribution guidelines?',
     },
-  ]);
+    {
+      type: 'input',
+      name: 'Tests',
+      message: 'Are there any test instructions?',
+    },
+  ]).then((answers) => {
+    console.log(answers);
+  })
 
 
 // const {}
