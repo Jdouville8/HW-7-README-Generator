@@ -31,7 +31,7 @@ inquirer
     },
     {
       type: "list",
-      choices: ["Apache", "MIT", "BSD 3", "GPL"],
+      choices: ["Apache", "MIT", "BSD 3"],
       name: "License",
       message: "Which license does this application require (Use Arrow Keys then press Enter)",
     },
@@ -68,8 +68,27 @@ inquirer
       Github,
       Email,
     } = answers;
+    let badge = (license) => {
+      // const license = license
+      let badge;
+      switch (license) {
+        case "Apache":
+          badge = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
+          break;
+        case "MIT":
+          badge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+          break;
+        case "BSD 3":
+          badge = '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)'
+          break;
+      }
+      return badge
+    }
     const README = `# ${Title}
     
+## Badge
+${badge(License)}
+
 ## Description
 ${Description}
 
@@ -111,11 +130,3 @@ You can reach me at the following email with any additional questions you may ha
       }
     });
   });
-
-// // TODO: Create a function to write README file
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
